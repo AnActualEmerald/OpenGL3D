@@ -18,9 +18,6 @@ protected:
 
 private:
 	GLuint _program;
-	GLuint _shader[NUM_SHADERS];
-	
-
-	std::string LoadShader(const std::string& fileName);
+	GLuint _shaders[NUM_SHADERS];
 };
 
