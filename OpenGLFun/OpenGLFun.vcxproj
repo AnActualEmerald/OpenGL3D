@@ -81,11 +81,13 @@
   <ItemGroup>
     <ClCompile Include="display.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="mesh.cpp" />
     <ClCompile Include="screen.cpp" />
     <ClCompile Include="shader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="display.h" />
+    <ClInclude Include="mesh.h" />
     <ClInclude Include="screen.h" />
     <ClInclude Include="shader.h" />
   </ItemGroup>

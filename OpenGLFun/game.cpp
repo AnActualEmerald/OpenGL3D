@@ -3,6 +3,8 @@
 #include "display.h"
 #include "GL\glew.h"
 #include "screen.h"
+#include "shader.h"
+#include "mesh.h"
 
 using namespace std;
 
@@ -23,7 +25,9 @@ Display window(WIDTH, HEIGHT, TITLE);
 
 //other variables
 float time = 0;
-
+Shader shader("./res/shaders/basicVert");
+Vertex verts[] = { Vertex(vec3(-1, 0.5, 0)), Vertex(vec3(0, -1, 0)), Vertex(vec3(1, 0.5, 0)) };
+Mesh mesh(verts, sizeof(verts) / sizeof(verts[0]));
 
 int main(int argc, char** argv){
 
@@ -42,6 +46,8 @@ void init()
 
 void loop()
 {
+
+	shader.Bind();
 	while (!window.IsCloseRequested()){
 		update();
 		render();
@@ -54,6 +60,8 @@ void update()
 }
 
 void render()
-{
+{	
 	window.Clear();	
+	
+	mesh.draw();
 }
