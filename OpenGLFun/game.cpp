@@ -5,6 +5,9 @@
 #include "screen.h"
 #include "shader.h"
 #include "mesh.h"
+#include "texture.h"
+#include "transform.h"
+#include "camera.h"
 
 using namespace std;
 
@@ -25,9 +28,16 @@ Display window(WIDTH, HEIGHT, TITLE);
 
 //other variables
 float time = 0;
-Shader shader("./res/shaders/basicVert");
-Vertex verts[] = { Vertex(vec3(-1, 0.5, 0)), Vertex(vec3(0, -1, 0)), Vertex(vec3(1, 0.5, 0)) };
-Mesh mesh(verts, sizeof(verts) / sizeof(verts[0]));
+Shader base("./res/shaders/basicVert");
+Shader phong("./res/shaders/basicPhong");
+
+Mesh mesh("./res/monkey3.obj");
+
+
+Texture tex("./res/bulba.jpg");
+Transform trans;
+Camera cam(vec3(0, 0, -3), 70.0f, (float)WIDTH / (float)HEIGHT, 0.01f, 1000.0f);
+
 
 int main(int argc, char** argv){
 
@@ -46,8 +56,11 @@ void init()
 
 void loop()
 {
-
-	shader.Bind();
+	//base.Bind();
+	
+	phong.Bind();
+	phong.SetAmbience(vec3(0.1, 0.1, 0.1));
+	trans.GetRot().y = 180;
 	while (!window.IsCloseRequested()){
 		update();
 		render();
@@ -56,12 +69,24 @@ void loop()
 
 void update()
 {
+
+	//trans.GetPos().x = sinf(time);
+//	trans.GetPos().z = cosf(time);
+	//trans.GetRot().x = time * 50;
+	//trans.GetRot().z = time * 50;
+	trans.GetRot().y = time * 50 + 180;
+	//trans.SetScale(vec3(sinf(time), sinf(time), sinf(time)));
+
+	//base.Update(trans, cam);
+	phong.Update(trans, cam);
+
 	window.Update();
+	time += 0.001;
 }
 
 void render()
 {	
-	window.Clear();	
+	window.Clear(0.0, 0.1, 0.25, 0.0);	
 	
 	mesh.draw();
 }

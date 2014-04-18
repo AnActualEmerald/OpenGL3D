@@ -13,36 +13,81 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="render">
+      <UniqueIdentifier>{aec77300-b909-416f-a8c4-0aa0922af6f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{e1a982a0-f78a-4311-93b8-869af72ebed0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="render\light">
+      <UniqueIdentifier>{eef1a1e6-8992-4df8-ae91-1375e4afa2f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="render\shader">
+      <UniqueIdentifier>{8ee21449-303f-46be-a740-1ceb085ab23f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="render\util">
+      <UniqueIdentifier>{7de926e1-1751-4ef7-8178-7ad9335ff0bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="display.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="screen.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="obj_loader.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.c">
+      <Filter>util</Filter>
     </ClCompile>
     <ClCompile Include="shader.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>render\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="display.cpp">
+      <Filter>render\util</Filter>
     </ClCompile>
     <ClCompile Include="mesh.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>render\util</Filter>
+    </ClCompile>
+    <ClCompile Include="screen.cpp">
+      <Filter>render\util</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>render\util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="display.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="camera.h">
+      <Filter>render</Filter>
     </ClInclude>
-    <ClInclude Include="screen.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="obj_loader.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="transform.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseLight.h">
+      <Filter>render\light</Filter>
+    </ClInclude>
+    <ClInclude Include="directionallight.h">
+      <Filter>render\light</Filter>
     </ClInclude>
     <ClInclude Include="shader.h">
-      <Filter>Header Files</Filter>
+      <Filter>render\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="display.h">
+      <Filter>render\util</Filter>
     </ClInclude>
     <ClInclude Include="mesh.h">
-      <Filter>Header Files</Filter>
+      <Filter>render\util</Filter>
+    </ClInclude>
+    <ClInclude Include="screen.h">
+      <Filter>render\util</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>render\util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

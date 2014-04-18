@@ -34,24 +34,12 @@ void Screen::drawCube(float x, float y, float z)
 {
 	//just a fun method with no real functionality
 	//for later in development
-	glPushMastrix();
-	glBegin(GL_QUADS);
-	{
-		
-	}
-	glEnd();
-	glPopMatrix();
+
 }
 
 void Screen::drawCube(float x, float y, float z, float w, float h)
 {
 	//just a fun method with no real functionality
 	//for later in development
-	glPushMatrix();
-	glBegin(GL_QUADS);
-	{
-		
-	}
-	glEnd();
-	glPopMatrix();
+	
 }
